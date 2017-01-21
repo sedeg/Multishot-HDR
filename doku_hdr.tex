@@ -214,25 +214,118 @@
 			
 
 	\chapter{Vorbereitung}
+		Bei der HDR-Fotografie geht es im wesentlichen darum, den Kontrastumfang einer Szene vollständig abzubilden. Da der Dynamikumfang aktueller Kameras beschränkt ist, erfordern spezielle Situationen den Einsatz dieser Technik. Das bedeutet, dass vom selben Motiv, mehrere Fotos mit unterschiedlichen Belichtungszeiten zu erzeugen sind. Diese werden in der Nachbearbeitung zu einem einzigen Bild zusammengefasst, welches nun einen erhöhten Dynamikumfang besitzt. Sinnvolle Motive für diese Technik können z. B. Innenaufnahmen, Nachtaufnahmen oder Gegenlichtaufnahmen sein.
+		
+		\bigskip
+		Für die Aufnahme mehrerer Einzelbilder, ist es ratsam ein Stativ zu verwenden, um Verwacklungen auszuschließen. Auch ist bei Nachtaufnahmen besonders auf variierende Lichtsituationen zu achten, da z. B. Fahrradfahrer in der Langzeitbelichtung unschöne Lichtstreifen hinterlassen.
 	
 	\section{Einzelbildaufnahmen}
 	\label{sec:einzel}
-	
-		\section{Tone-Mapping}
-		\label{sec:einzel}
+		Für die Erstellung der Einzelbildaufnahmen, besitzt die in dieser Arbeit verwendete Canon 7D die sog. Bracketing-Funktion. Diese ist dafür zuständig, automatisierte Belichtungsreihen zu erstellen. Für die besagte Kamera gibt es eine inoffizielle Erweiterung namens \grqq{}Magic Lantern\grqq{} (http://www.magiclantern.fm), welche sie überwiegend an Filmer richtet. Dennoch besitzt sie auch ein Menüpunkt für Fotografen und ermöglicht u. a. Belichtungsreihen bestehend aus bis zu 13 Fotos.
+		
+		\bigskip
+		Diese Funktion erstellt ein normal belichtetes Foto, gefolgt von jeweils 2 über- und unterbelichteten Aufnahmen. Die dafür verwendete Schrittweite lässt sich in Lichtwerten (engl. Exposure Value EV) einmalig einstellen, wobei die folgenden Einstellungsmöglichkeiten vorhanden sind: 0.5, 1, 1.5, 2, 3, ..., 8. Jede Erhöhung/Verringerung des Lichtwertes um eins, bedeutet die Halbierung/Verdopplung der Belichtung. 
+		
+		%TODO hier Bild von Kameraeinstellungen
 
-	\chapter{HDR-Processing}
+
+	\chapter{HDR-Erstellung}
 	\label{ch:processing}
+		Nach dem Erstellen der Belichtungsreihen, werden die Einzelbilder mit einer entsprechenden Software zu einem HDRI (High Dynamic Range Image) zusammengesetzt. Dieses besitzt einen erhöhten Dynamikumfang und liegt deshalb im 32-Bit-Format vor. Der Vorteil liegt darin, dass dieser dafür genutzt werden kann, unter- oder überbelichtete Aufnahmen korrekt zu belichtet. Dieser Schritt nennt sich \textit{Tone-Mapping}.
+		Da aktuelle Drucker und Bildschirme diesen Dynamikumfang nicht darstellen können, erzeugt die verwendete Software zum Abschluss ein runtergerechnetes 8-Bit-Bild. Dieses wird auch LDR-Bild (Low Dynamic Range) genannt 
+		
+		\bigskip
+		Die Kapitel \ref{sec:photoshop} und \ref{sec:photomatix} behandeln den Prozess des Tone-Mappings am Beispiel zweier Softwarelösungen.
 
 	
-	\section{Adobe Photoshop}
+	\section{Adobe Photoshop Lightroom}
 	\label{sec:photoshop}
+		Adobe Lightroom wird von vielen Fotografen zum Verwalten und Bearbeiten ihrer Fotos verwendet. Dabei speichert dieses Programm alle Bearbeitungsschritte und wendet diese erst beim Export auf das Bild an. Dadurch lassen sich Änderungen jeder Zeit rückgängig machen und die Originaldatei bleibt unberührt. Dennoch erzeugt es eine Live-Vorschau der aktuellen Änderungen. Auch unterstützt es die HDR-Erstellung, welche in dieser Arbeit dennoch nicht zum Einsatz kommt. Ferne wird hier in Kombination mit Photoshop HDR Pro gearbeitet, da dieses garantiert ein 32-Bit-Bild erstellt.
+		
+		\bigskip
+		Dazu wählt man nach dem Import in Lightroom eine Belichtungsreihe aus. Anschließend kann über das Kontextmenü, unter dem Menüpunkt \textit{Bearbeiten in > In Photoshop zu HDR Pro zusammenfügen}, der RAW-Editor von Photoshop mit den markierten Aufnahmen geöffnet werden (s. Abb. \ref{img:light_1}).
+		
+		%TODO Screen
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/ph2.jpg}
+			\caption{Lightroom - Belichtungsreihe und Klickpfad}
+			\label{img:light_1}
+		\end{figure}
 	
+		Im darauf folgenden Fenster lässt sich der Dynamikumfang des Zielbildes einstellen, wobei für diese Arbeit 32-Bit gewählt werden. Zusätzlich lassen sich sog. Geister entfernen. So werden Schemenhafte Darstellungen von sich bewegenden Objekten genannt, die sich zwischen den Einzelbildern an unterschiedlichen Positionen befinden. Die Software bestimmt im Anschluss eines der importierten Fotos und korrigiert das Zielbild dementsprechend. Der Benutzer kann an dieser Stelle auch manuell Eingreifen und ein Foto mit möglichst wenig Bewegung auswählen (s. Abb. \ref{img:light_2}). Mit einem klick auf \textit{OK}, wird das erzeugte Foto in Photoshop geöffnet. Anschließend kann das Programm geschlossen werden, wobei der aufploppende Speicherdialog bestätigt werden muss. Dies leitet das Speichern des Fotos im tiff-Format ein. Lightroom erkennt das neue Foto und lädt es automatisch in die aktuelle Bibliothek rein, wo es anschließend bereit für die Bearbeitung ist.
+		
+		%TODO Screen
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/ph2.jpg}
+			\caption{Lightroom - Photoshop Pro HDR-Entwicklung}
+			\label{img:light_2}
+		\end{figure}
+		
+		Lightroom bietet keine zusätzlichen Bearbeitungsfunktionen speziell für HDR, weshalb mit dieser Software gut realistisch wirkende LDR-Bilder erstellt werden können. Zur Verfügung stehen alle gängigen Einstellungsmöglichkeiten für die Fotonachbearbeitung s. Abb. \ref{img:light_3}.
+		
+		%TODO Screen
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/ph2.jpg}
+			\caption{Lightroom - Erstelltes HDR und Einstellungsmöglichkeiten}
+			\label{img:light_3}
+		\end{figure}
 	
+	\section{Photomatix}
+	\label{sec:photomatix}
+		Im Gegensatz zu Lightroom (\ref{sec:photoshop}), liegt das Spezialgebiet der Software Photomatix auf HDR-Entwicklung. Bei der Installation ist es sogar möglich ein zusätzliches Plugin für Lightroom zu installieren, um Belichtungsreihen aus dieser Software heraus in Photomatix zu importieren und bearbeitete Bilder in Lightroom zu öffnen.
+		
+		Als erstes muss eine Belichtungsreihe geladen werden, wobei im anschließenden Fenster diverse Optionen für das Zusammenfügen vorhanden sind (s. Abb. \ref{img:photo2}). Die Bilder können automatisch ausgerichtet, Geisterbilder entfernt, Rauschen reduziert und Chromatische Aberrationen reduziert werden. Da alle Fotos mit Hilfe eines Stativs aufgenommen sind, müssen diese nicht ausgerichtet werden. Es ist sinnvoll chromatische Aberrationen zu entfernen.
+		
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=0.8\linewidth]{img/photo2.jpg}
+			\caption{Photomatix - Zusammenführen zu HDR}
+			\label{img:photo2}
+		\end{figure}
 	
-	\section{Zweites Prog}
-	\label{sec:prog}
-
+		Nachdem das HDR-Bild erstellt ist, gibt es 3 Möglichkeiten das erzeugte Bild mittels spezieller Tone-Mapping-Methoden zu bearbeiten. Diese sind \textit{Contrast Optimizer}, \textit{Tone Compressor} und \textit{Detail Enhancer} und werden im Folgenden exemplarisch erläutert. Die dargestellten Ergebnisse sind jeweils überspitzt dargestellt und wirken wenig fotorealistisch.
+		
+		\bigskip
+		\paragraph{Contrast Optimizer} Diese Methode ist speziell dafür gedacht, die Darstellung von Kontrasten zu optimieren. Mit den folgenden Schiebereglern lässt sich das HDR-Bild bearbeiten: Stärke, Tonwertkompression,	Lichtwirkung, Weißpunkt, Schwarzpunkt, Mitteltöne, Farbsättigung und Farbtemperatur (siehe Abbildung \ref{img:photo4}). Wie der Name der Methode schon vermuten lässt, werden mit diesen Einstellungen die Hell-Dunkel-Kontraste stark berücksichtigt, sodass Die Farbsättigung angehoben werden muss.
+		
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/photo4.jpg}
+			\caption{Photomatix - Contrast Optimizer}
+			\label{img:photo4}
+		\end{figure}
+		
+		\paragraph{Tone Compressor} Im Gegensatz zu der vorherigen Methode kann dieses Mal mehr Einfluss auf die Farben genommen werden. Dies implizieren Reglernamen wie Helligkeit, Tonwertkompression, Kontrastanpassung, Weißpunkt, Schwarzpunkt, Farbsättigung und Farbtemperatur. Dafür ist es schwer möglich den Hell-Dunkel-Kontrast zu optimieren. Die Abbildung \ref{img:photo5} veranschaulicht dies gut. Der Schwarzpunkt ist bereits auf das Minimum reduziert, trotzdem sind nur wenig Details in den Schienen zu erkennen. Der Fokus liegt offenbar auf dem erweiterten Farbraum des HDR-Bildes, wodurch ein oftmals surreales Resultat entsteht.
+		
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/photo5.jpg}
+			\caption{Photomatix - Tone Compressor}
+			\label{img:photo5}
+		\end{figure}
+	
+		\paragraph{Detail Enhancer} In diesem Modus können zu den bereits erwähnten Einstellungsmöglichkeiten der beiden anderen Modi, zusätzlich noch Detailskontrast und Lichteffekte definiert werden. Wie in Abbildung \ref{img:photo3} zu sehen ist, gibt es vorgefertigte Presets für die Lichtwirkung. In dieser Abbildung wurde der maximale surreal Wert verwendet, was dem Foto den bekannten HDR-Effekt verleiht.
+		In diesem Modus kann sehr gut Einfluss auf Farb- und Kontrasteinstellungen genommen werden, wodurch er sich besonders gut für die HDR-Entwicklung in Photomatix eignet. 
+		
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/photo3.jpg}
+			\caption{Photomatix - Detail Enhancer}
+			\label{img:photo3}
+		\end{figure}
+	
+		Es können sehr surreal wirkende Fotos erstellt werden, realitätsnahe Bilder sind mit entsprechenden Einstellungen auch möglich. Das liegt auch daran, dass es weitere Einstellungsmöglichkeiten unter den Punkten \grqq{}Show more options\grqq{} und \grqq{}Show advanced options\grqq{} gibt. Diese sind: Lichter glätten, Weißpunkt,	Schwarzpunkt, Gamma, Farbtemperatur, Mikrokontraste glätten, Sättigung Lichter, Sättigung Schatten, Schatten glätten und Schatten beschneiden (s. Abb. \ref{img:photo6}).
+		
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=.5\linewidth]{img/photo6.jpg}
+			\caption{Photomatix - Detail Enhancer Optionen}
+			\label{img:photo6}
+		\end{figure}
+	
 	\chapter{Nachbearbeitung}
 	\label{ch:nach}
 	
