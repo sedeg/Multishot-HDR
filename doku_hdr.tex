@@ -387,8 +387,6 @@ Der moderne, halbrunde Anbau welche sich direkt an der Kreuzung Semmelweisstraß
 		
 		\bigskip
 		Diese Funktion erstellt ein normal belichtetes Foto, gefolgt von jeweils 2 über- und unterbelichteten Aufnahmen. Die dafür verwendete Schrittweite lässt sich in Lichtwerten (engl. Exposure Value EV) einmalig einstellen, wobei die folgenden Einstellungsmöglichkeiten vorhanden sind: 0.5, 1, 1.5, 2, 3, ..., 8. Jede Erhöhung/Verringerung des Lichtwertes um eins, bedeutet die Halbierung/Verdopplung der Belichtung. 
-		
-		%TODO hier Bild von Kameraeinstellungen
 
 
 	\chapter{HDR-Erstellung}
@@ -407,30 +405,27 @@ Der moderne, halbrunde Anbau welche sich direkt an der Kreuzung Semmelweisstraß
 		\bigskip
 		Dazu wählt man nach dem Import in Lightroom eine Belichtungsreihe aus. Anschließend kann über das Kontextmenü, unter dem Menüpunkt \textit{Bearbeiten in > In Photoshop zu HDR Pro zusammenfügen}, der RAW-Editor von Photoshop mit den markierten Aufnahmen geöffnet werden (s. Abb. \ref{img:light_1}).
 		
-		%TODO Screen
 		\bigskip
 		\begin{figure}[H]
-			\includegraphics[width=\linewidth]{img/ph2.jpg}
+			\includegraphics[width=\linewidth]{img/lightroom1.png}
 			\caption{Lightroom - Belichtungsreihe und Klickpfad}
 			\label{img:light_1}
 		\end{figure}
 	
 		Im darauf folgenden Fenster lässt sich der Dynamikumfang des Zielbildes einstellen, wobei für diese Arbeit 32-Bit gewählt werden. Zusätzlich lassen sich sog. Geister entfernen. So werden Schemenhafte Darstellungen von sich bewegenden Objekten genannt, die sich zwischen den Einzelbildern an unterschiedlichen Positionen befinden. Die Software bestimmt im Anschluss eines der importierten Fotos und korrigiert das Zielbild dementsprechend. Der Benutzer kann an dieser Stelle auch manuell Eingreifen und ein Foto mit möglichst wenig Bewegung auswählen (s. Abb. \ref{img:light_2}). Mit einem klick auf \textit{OK}, wird das erzeugte Foto in Photoshop geöffnet. Anschließend kann das Programm geschlossen werden, wobei der aufploppende Speicherdialog bestätigt werden muss. Dies leitet das Speichern des Fotos im tiff-Format ein. Lightroom erkennt das neue Foto und lädt es automatisch in die aktuelle Bibliothek rein, wo es anschließend bereit für die Bearbeitung ist.
 		
-		%TODO Screen
 		\bigskip
 		\begin{figure}[H]
-			\includegraphics[width=\linewidth]{img/ph2.jpg}
+			\includegraphics[width=.95\linewidth]{img/lightroom2.png}
 			\caption{Lightroom - Photoshop Pro HDR-Entwicklung}
 			\label{img:light_2}
 		\end{figure}
 		
 		Lightroom bietet keine zusätzlichen Bearbeitungsfunktionen speziell für HDR, weshalb mit dieser Software gut realistisch wirkende LDR-Bilder erstellt werden können. Zur Verfügung stehen alle gängigen Einstellungsmöglichkeiten für die Fotonachbearbeitung s. Abb. \ref{img:light_3}.
 		
-		%TODO Screen
 		\bigskip
 		\begin{figure}[H]
-			\includegraphics[width=\linewidth]{img/ph2.jpg}
+			\includegraphics[width=\linewidth]{img/lightroom3.png}
 			\caption{Lightroom - Erstelltes HDR und Einstellungsmöglichkeiten}
 			\label{img:light_3}
 		\end{figure}
@@ -490,6 +485,29 @@ Der moderne, halbrunde Anbau welche sich direkt an der Kreuzung Semmelweisstraß
 	
 	\chapter{Nachbearbeitung}
 	\label{ch:nach}
-	
+		Durch den Fotomerge mit Photoshop kommt es manchmal, beim Versuch der Entfernung von Lichtstreifen, zu unschönen Konturen. Die Abbildung \ref{img:bibo_normal} veranschaulicht dieses Phänomen anhand des Fotos der Deutschen Nationalbibliothek. Im letzten Foto sind Autos in der Spiegelung zu sehen. Um dieses Problem zu lösen, kann man das entsprechende Foto entweder weglassen oder die Streifen durch die Originaldatei zurückersetzen.
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/bibo_unbearbeitet.PNG}
+			\caption{Nachbearbeitung - Bibliothek mit Lichtstreifen}
+			\label{img:bibo_normal}
+		\end{figure}
+		
+		Die Abbildung \ref{img:bibo_reworked} zeigt, wie die Problemstelle nach der Bearbeitung aussieht.
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/bibo_bearbeitet.PNG}
+			\caption{Nachbearbeitung - Bibliothek ohne Lichtstreifen}
+			\label{img:bibo_reworked}
+		\end{figure}
+		
+		Bei der Aufnahme der Nikolaikirche ist ein Radfahrer durchs Bild gefahren und hat vereinzelt Lichtstreifen ins Bild gezaubert. Die Abbildung \ref{img:stamp} zeigt, wie dieser Streifen weggestempelt wird. Auch störende Schneestreifen oder Müll werden in jedem Bild berücksichtigt und gestempelt.
+		
+		\bigskip
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{img/hdr_stempeln.JPG}
+			\caption{Nachbearbeitung - Stempeln}
+			\label{img:stamp}
+		\end{figure}
 	
 \end{document}
